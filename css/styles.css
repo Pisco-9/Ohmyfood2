@@ -8,4 +8,246 @@
   padding: 0;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  font-family: "Roboto", sans-serif;
+  background-color: #f3f3f3;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 63px;
+  background-color: white;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  padding: 25px 0;
+}
+header img {
+  width: 162px;
+}
+header + p {
+  width: 100%;
+  padding: 20px;
+  background-color: #eaeaea;
+  text-align: center;
+}
+header + p i {
+  width: 12px;
+  margin-right: 15px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 18px;
+  margin: 30px 0;
+}
+.hero h1 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+.hero p {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 10px 0;
+  text-align: center;
+}
+.hero button {
+  width: 218px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(0deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  cursor: pointer;
+}
+.hero button:hover {
+  background: linear-gradient(0deg, #9356dc -11.44%, #ff79da 123.93%);
+}
+
+.fonctionnement {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  padding: 50px 0px 70px 0;
+}
+.fonctionnement article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: 25px;
+  min-width: 380px;
+  max-width: 1080px;
+  width: 100%;
+  padding: 0 25px;
+}
+.fonctionnement article h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px 0;
+  align-self: flex-start;
+}
+.fonctionnement article button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  min-width: 310px;
+  height: 72px;
+  border: none;
+  border-radius: 20px;
+  background: #f6f6f6;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.fonctionnement article button span {
+  position: absolute;
+  left: -12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50px;
+  background-color: #9356dc;
+  color: white;
+  text-align: center;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+}
+.fonctionnement article button i {
+  color: #7e7e7e;
+}
+.fonctionnement article button i:hover {
+  color: #9356dc;
+}
+
+.fa-solid {
+  font-size: 26px;
+}
+
+.restaurants {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 55px;
+}
+.restaurants .res-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 30px;
+  min-width: 300px;
+  max-width: 1080px;
+  width: 100%;
+  padding: 0 25px;
+}
+.restaurants .res-column h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px 0;
+  align-self: flex-start;
+}
+.restaurants .res-column div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.restaurants .res-column a {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  overflow: hidden;
+}
+.restaurants .res-column a article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.restaurants .res-column a article img {
+  min-width: 300px;
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+}
+.restaurants .res-column a article .legende {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  padding: 0 20px;
+}
+.restaurants .res-column a article .legende div {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  gap: 10px;
+}
+.restaurants .res-column a article .legende .fa-heart {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  font-size: 25px;
+}
+.restaurants .res-column a article .legende .fa-heart:hover {
+  border: none;
+  color: linear-gradient(0deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  background-color: #353535;
+  padding: 25px;
+  margin-top: 55px;
+}
+footer P {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+footer P .fa-solid {
+  color: white;
+  font-size: 20px;
+  margin-right: 15px;
+}
+
 /*# sourceMappingURL=styles.css.map */

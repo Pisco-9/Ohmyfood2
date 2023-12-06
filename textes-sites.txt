@@ -1,0 +1,84 @@
+-- logos --
+mobile
+font Shrikhand
+font-size 30
+font-weight 400
+dimension 162
+
+desktop
+dimension 200
+
+-------------------------------------------
+
+Paris, Belleville
+font Roboto
+font-size 16
+font-weight 500
+
+-------------------------------------------
+
+Réservez le menu qui vous convient
+font Roboto
+font-size 40 (desktop)
+font-size 24 (mobile)
+font-weight 700
+
+-------------------------------------------
+
+Découvrez des restaurants d’exception, sélectionnés par nos soins.
+font Roboto
+font-size 18
+font-weight 300
+
+-------------------------------------------
+
+-- bouton --
+Explorer nos restaurants
+dimension 218 x 50
+font Roboto
+font-size 16
+font-weight 500
+
+-------------------------------------------
+
+-- Fonctionnement -- font Roboto / font-size 24 / font-weight 700
+
+Choisissez un restaurant
+
+Composez votre menu
+
+Dégustez au restaurant
+
+font Roboto
+font-size 16
+font-weight 500
+
+-------------------------------------------
+
+-- Restaurants -- font Roboto / font-size 24 / font-weight 700
+photo restaurant
+La palette du goût -- font Roboto / font-size 18 / font-weight 700
+Ménilmontant + icone coeur -- font Roboto / font-size 17 / font-weight 300
+
+photo restaurant
+La note enchantée -- font Roboto / font-size 18 / font-weight 700
+Charonne + icone coeur -- font Roboto / font-size 17 / font-weight 300
+
+photo restaurant
+À la française -- font Roboto / font-size 18 / font-weight 700
+Cité Rouge + icone coeur -- font Roboto / font-size 17 / font-weight 300
+
+photo restaurant
+Le délice des sens -- font Roboto / font-size 18 / font-weight 700
+Folie-Méricourt + icone coeur -- font Roboto / font-size 17 / font-weight 300
+
+-------------------------------------------
+-- Footer --
+Proposer un restaurant
+Devenir partenaire
+Mentions légales
+Contact
+
+font Roboto
+font-size 16
+font-weight 500
