@@ -67,8 +67,9 @@ header + p i {
 .hero p {
   font-size: 18px;
   font-weight: 300;
-  margin: 10px 0;
   text-align: center;
+  margin: 10px 0;
+  padding: 0 25px;
 }
 .hero button {
   width: 218px;
@@ -97,7 +98,7 @@ header + p i {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-items: flex-end;
+  align-items: stretch;
   gap: 25px;
   min-width: 380px;
   max-width: 1080px;
@@ -110,7 +111,21 @@ header + p i {
   margin: 10px 0;
   align-self: flex-start;
 }
-.fonctionnement article button {
+.fonctionnement article .media {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 25px;
+  width: 100%;
+}
+@media only screen and (min-width: 1024px) {
+  .fonctionnement article .media {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.fonctionnement article .media button {
   position: relative;
   display: flex;
   align-items: center;
@@ -127,7 +142,13 @@ header + p i {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
-.fonctionnement article button span {
+@media only screen and (min-width: 1024px) {
+  .fonctionnement article .media button {
+    min-width: 250px;
+    max-width: 300px;
+  }
+}
+.fonctionnement article .media button span {
   position: absolute;
   left: -12px;
   width: 24px;
@@ -140,10 +161,10 @@ header + p i {
   margin: 0;
   padding: 0;
 }
-.fonctionnement article button i {
+.fonctionnement article .media button i {
   color: #7e7e7e;
 }
-.fonctionnement article button i:hover {
+.fonctionnement article .media button i:hover {
   color: #9356dc;
 }
 
@@ -180,27 +201,42 @@ header + p i {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
+  height: auto;
 }
-.restaurants .res-column a {
+@media only screen and (min-width: 1024px) {
+  .restaurants .res-column div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.restaurants .res-column div a {
   display: flex;
   flex-direction: column;
   background-color: white;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   overflow: hidden;
+  width: 100%;
 }
-.restaurants .res-column a article {
+@media only screen and (min-width: 1024px) {
+  .restaurants .res-column div a {
+    max-width: 450px;
+  }
+}
+.restaurants .res-column div a article {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
 }
-.restaurants .res-column a article img {
+.restaurants .res-column div a article img {
   min-width: 300px;
   width: 100%;
   height: 175px;
   object-fit: cover;
 }
-.restaurants .res-column a article .legende {
+.restaurants .res-column div a article .legende {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -208,19 +244,19 @@ header + p i {
   height: 75px;
   padding: 0 20px;
 }
-.restaurants .res-column a article .legende div {
+.restaurants .res-column div a article .legende div {
   display: flex;
   flex-direction: column;
   flex: 3;
   gap: 10px;
 }
-.restaurants .res-column a article .legende .fa-heart {
+.restaurants .res-column div a article .legende .fa-heart {
   display: flex;
   flex: 1;
   justify-content: flex-end;
   font-size: 25px;
 }
-.restaurants .res-column a article .legende .fa-heart:hover {
+.restaurants .res-column div a article .legende .fa-heart:hover {
   border: none;
   color: linear-gradient(0deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
 }
@@ -235,6 +271,25 @@ footer {
   padding: 25px;
   margin-top: 55px;
 }
+@media only screen and (min-width: 1024px) {
+  footer {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    padding-top: 85px;
+    padding-bottom: 60px;
+  }
+}
+footer img.left {
+  width: 125px;
+  margin: 15px 0;
+  display: block;
+}
+@media only screen and (min-width: 1024px) {
+  footer img.left {
+    display: none;
+  }
+}
 footer P {
   display: flex;
   flex-direction: row;
@@ -248,6 +303,16 @@ footer P .fa-solid {
   color: white;
   font-size: 20px;
   margin-right: 15px;
+}
+footer img.right {
+  width: 125px;
+  margin: 0px 15px;
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  footer img.right {
+    display: inline-block;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
