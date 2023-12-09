@@ -11,13 +11,13 @@
 html,
 body {
   width: 100%;
-  height: 100vh;
 }
 
 body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  align-items: center;
   font-family: "Roboto", sans-serif;
   background-color: #f3f3f3;
 }
@@ -35,10 +35,19 @@ header {
   height: 63px;
   background-color: white;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  padding: 25px 0;
+}
+@media only screen and (min-width: 1024px) {
+  header {
+    height: 92px;
+  }
 }
 header img {
   width: 162px;
+}
+@media only screen and (min-width: 1024px) {
+  header img {
+    width: 200px;
+  }
 }
 header + p {
   width: 100%;
@@ -78,13 +87,13 @@ header + p i {
   font-weight: 500;
   border: none;
   border-radius: 50px;
-  background: linear-gradient(0deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  background: linear-gradient(0deg, #9356dc -11.44%, #ff79da 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   color: white;
   cursor: pointer;
 }
 .hero button:hover {
-  background: linear-gradient(0deg, #9356dc -11.44%, #ff79da 123.93%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(0deg, #9356dc -5.2%, #ff79da 110.74%);
 }
 
 .fonctionnement {
@@ -163,8 +172,11 @@ header + p i {
 }
 .fonctionnement article .media button i {
   color: #7e7e7e;
+  transition-duration: 0.5s;
+  transition-property: color;
+  transition-timing-function: ease-in-out;
 }
-.fonctionnement article .media button i:hover {
+.fonctionnement article .media button:hover i {
   color: #9356dc;
 }
 
@@ -255,10 +267,6 @@ header + p i {
   flex: 1;
   justify-content: flex-end;
   font-size: 25px;
-}
-.restaurants .res-column div a article .legende .fa-heart:hover {
-  border: none;
-  color: linear-gradient(0deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
 }
 
 footer {

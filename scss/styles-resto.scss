@@ -1,0 +1,248 @@
+@use "fonts";
+@use "reset";
+@use "general";
+@use "ombres" as bs;
+@use "dégradés" as gd;
+@use "couleurs" as c;
+@use "media" as m;
+
+header {
+  width: 100%;
+  height: 63px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+
+  padding: 0 75px;
+
+  @include m.xl {
+    height: 92px;
+  }
+
+  .fa-arrow-left {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  img {
+    width: 162px;
+
+    @include m.xl {
+      width: 200px;
+    }
+  }
+
+  .fa-arrow-right {
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+img.hero-image {
+  width: 100%;
+  height: 380px;
+
+  object-fit: cover;
+}
+
+main {
+  min-width: 380px;
+  max-width: 1080px;
+  width: 100%;
+
+  background-color: c.$cl-gris-bg;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+
+  margin-top: -50px;
+  padding: 50px 175px 40px 175px;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 40px;
+
+    h1 {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      font-family: "Shrikhand", serif;
+      font-size: 28px;
+
+      letter-spacing: 1px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 20px;
+      width: 100%;
+
+      h2 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 7px;
+
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 1rem;
+
+        span {
+          border: 1px solid c.$cl-vert-c;
+          width: 40px;
+        }
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        background-color: white;
+        border-radius: 25px;
+        box-shadow: bs.$bs-btn;
+
+        overflow: hidden;
+
+        cursor: pointer;
+
+        .repas {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+
+          width: 100%;
+
+          padding: 20px 20px 20px 20px;
+
+          h3 {
+            font-size: 18px;
+            font-weight: 500;
+          }
+
+          p {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            font-size: 15px;
+            font-weight: 300;
+
+            span {
+              font-size: 15px;
+              font-weight: 700;
+            }
+          }
+        }
+
+        .valider {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          width: 0%;
+
+          background-color: c.$cl-vert-c;
+          color: white;
+
+          transition-duration: 0.5s;
+          transition-property: width;
+          transition-timing-function: ease-in-out;
+        }
+        &:hover {
+          .valider {
+            width: 9%;
+          }
+        }
+      }
+    }
+
+    button {
+      width: 218px;
+      height: 50px;
+      font-size: 16px;
+      font-weight: 500;
+
+      border: none;
+      border-radius: 50px;
+      background: gd.$gd-btn-default;
+      box-shadow: bs.$bs-btn;
+
+      color: white;
+
+      cursor: pointer;
+
+      &:hover {
+        background: gd.$gd-btn-hover;
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  background-color: #353535;
+  padding: 25px;
+
+  @include m.xl {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+
+    padding-top: 85px;
+    padding-bottom: 60px;
+  }
+
+  img.left {
+    width: 125px;
+    margin: 15px 0;
+
+    display: block;
+
+    @include m.xl {
+      display: none;
+    }
+  }
+
+  P {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+
+    .fa-solid {
+      color: white;
+      font-size: 20px;
+      margin-right: 15px;
+    }
+  }
+
+  img.right {
+    width: 125px;
+    margin: 0px 15px;
+
+    display: none;
+
+    @include m.xl {
+      display: inline-block;
+    }
+  }
+}

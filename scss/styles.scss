@@ -16,10 +16,16 @@ header {
   background-color: white;
   box-shadow: bs.$bs-header;
 
-  padding: 25px 0;
+  @include m.xl {
+    height: 92px;
+  }
 
   img {
     width: 162px;
+
+    @include m.xl {
+      width: 200px;
+    }
   }
 
   + p {
@@ -71,6 +77,8 @@ header {
     color: white;
 
     cursor: pointer;
+
+    // transition: background 3s ease;
 
     &:hover {
       background: gd.$gd-btn-hover;
@@ -157,7 +165,12 @@ header {
         i {
           color: c.$cl-gris-icones;
 
-          &:hover {
+          transition-duration: 0.5s;
+          transition-property: color;
+          transition-timing-function: ease-in-out;
+        }
+        &:hover {
+          i {
             color: c.$cl-violet;
           }
         }
@@ -258,11 +271,6 @@ header {
               flex: 1;
               justify-content: flex-end;
               font-size: 25px;
-
-              &:hover {
-                border: none;
-                color: gd.$gd-btn-default;
-              }
             }
           }
         }
