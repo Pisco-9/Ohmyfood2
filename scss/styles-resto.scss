@@ -18,10 +18,11 @@ header {
 
   background-color: white;
 
-  padding: 0 75px;
+  padding: 0 25px;
 
   @include m.xl {
     height: 92px;
+    padding: 0 75px;
   }
 
   .fa-arrow-left {
@@ -60,7 +61,11 @@ main {
   border-top-left-radius: 50px;
 
   margin-top: -50px;
-  padding: 50px 175px 40px 175px;
+  padding: 50px 25px 40px 25px;
+
+  @include m.xl {
+    padding: 50px 175px 40px 175px;
+  }
 
   section {
     display: flex;
@@ -72,11 +77,13 @@ main {
     h1 {
       display: flex;
       align-items: center;
-      gap: 50px;
+      gap: 25px;
       font-family: "Shrikhand", serif;
       font-size: 28px;
 
-      letter-spacing: 1px;
+      .fa-heart {
+        font-size: 21px;
+      }
     }
 
     article {
@@ -117,52 +124,85 @@ main {
 
         .repas {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           flex-wrap: nowrap;
 
           width: 100%;
 
-          padding: 20px 20px 20px 20px;
+          // padding: 20px 20px 20px 20px;
 
-          h3 {
-            font-size: 18px;
-            font-weight: 500;
+          overflow: hidden;
+
+          .titre-descrip {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 5px;
+
+            flex: 1;
+
+            overflow: hidden;
+
+            padding: 20px 20px 20px 20px;
+
+            h3 {
+              font-size: 18px;
+              font-weight: 500;
+
+              overflow: hidden;
+              text-overflow: ellipsis;
+              text-wrap: nowrap;
+            }
+
+            p {
+              font-size: 15px;
+              font-weight: 300;
+
+              overflow: hidden;
+              text-overflow: ellipsis;
+              text-wrap: nowrap;
+            }
           }
 
-          p {
+          .prix {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
-            justify-content: space-between;
+            align-items: flex-end;
 
-            font-size: 15px;
-            font-weight: 300;
+            h4 {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              width: auto;
 
-            span {
-              font-size: 15px;
-              font-weight: 700;
+              padding: 20px 20px 20px 0px;
             }
           }
-        }
 
-        .valider {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-
-          width: 0%;
-
-          background-color: c.$cl-vert-c;
-          color: white;
-
-          transition-duration: 0.5s;
-          transition-property: width;
-          transition-timing-function: ease-in-out;
-        }
-        &:hover {
           .valider {
-            width: 9%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 0%;
+
+            background-color: c.$cl-vert-c;
+            color: white;
+
+            transition-duration: 0.5s;
+            transition-property: width;
+            transition-timing-function: ease-in-out;
+          }
+          &:hover {
+            .valider {
+              width: 20%;
+
+              @include m.xl {
+                width: 9%;
+              }
+            }
           }
         }
       }

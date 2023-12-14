@@ -36,11 +36,12 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding: 0 75px;
+  padding: 0 25px;
 }
 @media only screen and (min-width: 1024px) {
   header {
     height: 92px;
+    padding: 0 75px;
   }
 }
 header .fa-arrow-left {
@@ -74,7 +75,12 @@ main {
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
   margin-top: -50px;
-  padding: 50px 175px 40px 175px;
+  padding: 50px 25px 40px 25px;
+}
+@media only screen and (min-width: 1024px) {
+  main {
+    padding: 50px 175px 40px 175px;
+  }
 }
 main section {
   display: flex;
@@ -86,10 +92,12 @@ main section {
 main section h1 {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 25px;
   font-family: "Shrikhand", serif;
   font-size: 28px;
-  letter-spacing: 1px;
+}
+main section h1 .fa-heart {
+  font-size: 21px;
 }
 main section article {
   display: flex;
@@ -123,28 +131,48 @@ main section article .menu {
 }
 main section article .menu .repas {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
+  overflow: hidden;
+}
+main section article .menu .repas .titre-descrip {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 5px;
+  flex: 1;
+  overflow: hidden;
   padding: 20px 20px 20px 20px;
 }
-main section article .menu .repas h3 {
+main section article .menu .repas .titre-descrip h3 {
   font-size: 18px;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
 }
-main section article .menu .repas p {
+main section article .menu .repas .titre-descrip p {
+  font-size: 15px;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}
+main section article .menu .repas .prix {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  font-size: 15px;
-  font-weight: 300;
+  align-items: flex-end;
 }
-main section article .menu .repas p span {
-  font-size: 15px;
-  font-weight: 700;
+main section article .menu .repas .prix h4 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: auto;
+  padding: 20px 20px 20px 0px;
 }
-main section article .menu .valider {
+main section article .menu .repas .valider {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,8 +184,13 @@ main section article .menu .valider {
   transition-property: width;
   transition-timing-function: ease-in-out;
 }
-main section article .menu:hover .valider {
-  width: 9%;
+main section article .menu .repas:hover .valider {
+  width: 20%;
+}
+@media only screen and (min-width: 1024px) {
+  main section article .menu .repas:hover .valider {
+    width: 9%;
+  }
 }
 main section button {
   width: 218px;
