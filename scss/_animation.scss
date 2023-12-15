@@ -1,0 +1,5 @@
+@mixin fadeIn {
+  @keyframes fadeIn {
+    @content;
+  }
+}

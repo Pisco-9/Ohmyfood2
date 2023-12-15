@@ -74,15 +74,58 @@ main {
     align-items: center;
     gap: 40px;
 
-    h1 {
+    .titre-page-menu {
       display: flex;
+      flex-direction: row;
       align-items: center;
-      gap: 25px;
-      font-family: "Shrikhand", serif;
-      font-size: 28px;
+      justify-content: center;
+      gap: 20px;
 
-      .fa-heart {
-        font-size: 21px;
+      width: 100%;
+
+      h1 {
+        font-family: "Shrikhand", serif;
+        font-size: 28px;
+      }
+
+      .hearts {
+        position: relative;
+
+        // display: flex;
+        // flex: 1;
+        // align-items: center;
+        // justify-content: center;
+        font-size: 25px;
+
+        width: auto;
+        height: auto;
+
+        .fa-regular {
+          // display: flex;
+          position: relative;
+
+          z-index: 1;
+        }
+
+        .fa-solid {
+          // display: flex;
+          position: absolute;
+          top: 2px;
+          left: 0px;
+
+          background: gd.$gd-btn-heatrs;
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+
+          z-index: 10;
+
+          opacity: 0;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
 
@@ -92,6 +135,22 @@ main {
       flex-wrap: nowrap;
       gap: 20px;
       width: 100%;
+
+      animation-name: fadeIn;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-delay: 0s;
+      opacity: 0;
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-75px);
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
       h2 {
         display: flex;
@@ -128,8 +187,6 @@ main {
           flex-wrap: nowrap;
 
           width: 100%;
-
-          // padding: 20px 20px 20px 20px;
 
           overflow: hidden;
 

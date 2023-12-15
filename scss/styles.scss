@@ -5,6 +5,67 @@
 @use "dégradés" as gd;
 @use "couleurs" as c;
 @use "media" as m;
+@use "animation" as a;
+
+.loader {
+  position: absolute;
+  top: 50px;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #ff79da;
+  border-bottom-color: #9356dc;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation-name: rotation;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+
+  margin: 50px auto;
+
+  z-index: 99;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+    display: inline-block;
+  }
+  100% {
+    transform: rotate(360deg);
+    display: none;
+  }
+}
+
+.film-opaque {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(255, 255, 255, 0.7);
+
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+
+  z-index: 89;
+
+  @keyframes fadeIn {
+    from {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    to {
+      // opacity: 0;
+      display: none;
+    }
+  }
+}
 
 header {
   display: flex;
@@ -246,33 +307,88 @@ header {
           flex-direction: column;
           flex-wrap: nowrap;
 
-          img {
-            min-width: 300px;
-            width: 100%;
+          .image-encart {
+            position: relative;
+            width: auto;
             height: 175px;
-            object-fit: cover;
+
+            img {
+              position: relative;
+              min-width: 300px;
+              width: 100%;
+              height: 175px;
+              object-fit: cover;
+            }
+
+            h5 {
+              position: absolute;
+              top: 15px;
+              right: 15px;
+
+              background-color: c.$cl-vert-c;
+              border-radius: 5px;
+              color: c.$cl-vert-f;
+
+              padding: 7px 10px;
+            }
           }
 
           .legende {
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            // justify-content: center;
             align-items: center;
             height: 75px;
             padding: 0 20px;
 
-            div {
+            .titre-soustitre {
               display: flex;
               flex-direction: column;
               flex: 3;
-              gap: 10px;
+              gap: 5px;
             }
 
-            .fa-heart {
+            .hearts {
+              position: relative;
+
               display: flex;
               flex: 1;
-              justify-content: flex-end;
+              align-items: center;
+              justify-content: center;
               font-size: 25px;
+
+              height: 100%;
+
+              // margin-top: 25px;
+
+              .fa-regular {
+                display: flex;
+                position: absolute;
+                top: 15px;
+                right: 0;
+
+                z-index: 1;
+              }
+
+              .fa-solid {
+                display: flex;
+                position: absolute;
+                top: 15px;
+                right: 0;
+
+                background: gd.$gd-btn-heatrs;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+
+                z-index: 10;
+
+                opacity: 0;
+
+                &:hover {
+                  opacity: 1;
+                }
+              }
             }
           }
         }

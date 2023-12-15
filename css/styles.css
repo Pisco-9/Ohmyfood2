@@ -27,6 +27,57 @@ a {
   color: inherit;
 }
 
+.loader {
+  position: absolute;
+  top: 50px;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #ff79da;
+  border-bottom-color: #9356dc;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation-name: rotation;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  margin: 50px auto;
+  z-index: 99;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+    display: inline-block;
+  }
+  100% {
+    transform: rotate(360deg);
+    display: none;
+  }
+}
+.film-opaque {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  z-index: 89;
+}
+@keyframes fadeIn {
+  from {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  to {
+    display: none;
+  }
+}
+
 header {
   display: flex;
   align-items: center;
@@ -244,31 +295,70 @@ header + p i {
   flex-direction: column;
   flex-wrap: nowrap;
 }
-.restaurants .res-column div a article img {
+.restaurants .res-column div a article .image-encart {
+  position: relative;
+  width: auto;
+  height: 175px;
+}
+.restaurants .res-column div a article .image-encart img {
+  position: relative;
   min-width: 300px;
   width: 100%;
   height: 175px;
   object-fit: cover;
 }
+.restaurants .res-column div a article .image-encart h5 {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #99e2d0;
+  border-radius: 5px;
+  color: #008766;
+  padding: 7px 10px;
+}
 .restaurants .res-column div a article .legende {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   height: 75px;
   padding: 0 20px;
 }
-.restaurants .res-column div a article .legende div {
+.restaurants .res-column div a article .legende .titre-soustitre {
   display: flex;
   flex-direction: column;
   flex: 3;
-  gap: 10px;
+  gap: 5px;
 }
-.restaurants .res-column div a article .legende .fa-heart {
+.restaurants .res-column div a article .legende .hearts {
+  position: relative;
   display: flex;
   flex: 1;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   font-size: 25px;
+  height: 100%;
+}
+.restaurants .res-column div a article .legende .hearts .fa-regular {
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  z-index: 1;
+}
+.restaurants .res-column div a article .legende .hearts .fa-solid {
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  background: linear-gradient(0deg, #ff79da -11.44%, #9356dc 123.93%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  z-index: 10;
+  opacity: 0;
+}
+.restaurants .res-column div a article .legende .hearts .fa-solid:hover {
+  opacity: 1;
 }
 
 footer {
