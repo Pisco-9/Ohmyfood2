@@ -106,6 +106,7 @@ main section .titre-page-menu .hearts {
   font-size: 25px;
   width: auto;
   height: auto;
+  cursor: pointer;
 }
 main section .titre-page-menu .hearts .fa-regular {
   position: relative;
